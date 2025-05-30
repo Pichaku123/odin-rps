@@ -23,8 +23,8 @@ function game(){
     return;
 }
 function playRound(){
-    let choice_comp=()=>Math.floor(Math.random()*3);
-    let choice_hum=()=>prompt("Enter your choice, rock, paper, scissors");
+    const choice_comp=()=>Math.floor(Math.random()*3);
+    const choice_hum=()=>prompt("Enter your choice, rock, paper, scissors");
     let comp="", hum="";
     comp=set_choice(choice_comp());
     hum=choice_hum().toLowerCase();
@@ -38,7 +38,7 @@ function result(comp, hum){
     if(comp===hum){
         return "N";
     }
-    if((hum==="rock" && comp==="paper") || (hum==="paper" && comp==="scissors") || (hum==="scissors") && (comp==="paper")){
+    if((hum==="rock" && comp==="paper") || (hum==="paper" && comp==="scissors") || (hum==="scissors") && (comp==="rock")){
         return "C";
     }
     else{

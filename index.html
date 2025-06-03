@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
-    
-    <h1>OPEN CONSOLE(F12) TO PLAY THE GAME</h1>
-    <h2>Enter your choice- rock, paper, scissors</h2>   
-
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
-
-    <div class="scores">
-        <div class="human">Human- 0</div>
-        <div class="computer">Computer- 0</div>
+    <div class="intro">
+        <h1>Rock, Paper, Scissors</h1>
+        <h2>By Pichaku123</h2>
+        <h3>Enter your choice- Rock, Paper, or Scissors!</h3> 
     </div>
-    <div class="progress"></div>
-    <div class="result_dis"></div>
+
+    <div class="button-cont">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+
+    <div class="content">
+        <div class="scores">
+            <div class="human">You- 0</div>
+            <div class="computer">Computer- 0</div>
+        </div>
+    
+        <div class="choice"></div>
+        <div class="progress"></div>
+        <div class="result_dis"></div>
+    </div>
 
     <script src="scripts.js"></script>
 </body>

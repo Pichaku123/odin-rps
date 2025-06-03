@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: #e0f0ff;
+}
+button{
+    padding: 20px 40px;
+    font-size: 40px;
+    border-radius: 25px;
+    border: 4px solid;
+    background-color: lightgreen;
+}
+.button-cont{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    background-color: lightskyblue;
+}
+.intro{
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    background-color: #e0f0ff;
+}
+/* scores ko centre+flex karna hai
+    also result_dis ko bhi, and make it bigger
+    progress ko thik thik size rakho
+    choice ko chota rakho to chalega ig
+    also make flex-shrink for button-cont 0;
+    */
+.choice, .progress, .scores, .result_dis{
+    text-align: center;
+    padding: 15px;
+}
+.content{
+    background-color: #e0f0ff;
+    margin: 0px;
+    padding: 0px;
+}
+.choice{
+    font-size: 30px;
+}
+.progress{
+    font-size: 30px;
+}
+.scores{
+    font-size: 40px;
+}
+.result_dis{
+    font-size: 45px;
+}

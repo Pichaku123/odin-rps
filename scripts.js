@@ -1,6 +1,9 @@
 let score_C=0, score_H=0, rounds=0;
+let gameOver=false;
 
 function playRound(choice_hum){
+    if(gameOver) return;
+    
     const choice_comp=()=>Math.floor(Math.random()*3);
     comp=set_choice(choice_comp()); //rock, paper, scissors
     switch(result(comp, choice_hum))
@@ -23,54 +26,47 @@ function playRound(choice_hum){
     rounds++;  
     if(rounds==5){
         declare_winner(score_C, score_H);
-        //implement this later for replayability
-        // console.log("Would you like to play again?");    
-        // rounds=0;
-        // return;
+        gameOver=true;
     } 
-    
+        
 }
 function result(comp, hum){
     console.log(`You chose ${hum}`);
 
-    let msg=document.createElement("p");
-    msg.textContent=`You chose- ${hum}, computer chose- ${comp}`;
-    progress.appendChild(msg);
+    
     //progress is the div in which i'm adding these messages
-
+    choice.textContent=`You chose ${hum}, Computer chose ${comp}`;
     if(comp===hum){
         console.log("This round's a tie!");
+        progress.textContent=`Round Tied.`;
         return "N";
     }
     if((hum==="rock" && comp==="paper") || (hum==="paper" && comp==="scissors") || (hum==="scissors") && (comp==="rock")){
         console.log("You lost this round :(");
+        progress.textContent=`Round Lost :(`;
         return "C";
     }
     else{
         console.log("You won this round!");
+        progress.textContent=`Round won!`;
         return "H";
     }
 }
 
 function declare_winner(score_C, score_H){
-    let res=document.createElement("p");
-    
     if(score_C>score_H){
-        console.log("You lost :(");
-        res.textContent=`you lost`;
-        result_dis.appendChild(res);
+        console.log("You lost :( ");
+        result_dis.textContent=`You Lost the Game :( Reload the page to play again.`;
         return;
     }
     else if(score_C<score_H){
         console.log("You won!");
-        res.textContent=`you won!`;
-        result_dis.appendChild(res);
+        result_dis.textContent=`Congrats, you won! Reload the page to play again.`;
         return;
     }
     else{
         console.log("It's a tie!");
-        res.textContent=`it's a tie`;
-        result_dis.appendChild(res);
+        result_dis.textContent=`The game's a tie... Reload the page to play again.`;
         return;
     }
 }
@@ -104,6 +100,7 @@ document.querySelector("#scissors").addEventListener("click", () => {
     
 });
 
+const choice=document.querySelector(".choice");
 const progress=document.querySelector(".progress");
 const result_dis=document.querySelector(".result_dis");
 const human=document.querySelector(".human");
